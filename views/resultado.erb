@@ -1,1 +1,64 @@
-Você respondeu: <%= @params.inspect %>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<!-- Webfonts -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<!-- Meta tags -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="description" content="Receba um diagnóstico personalizado de como potencializar os resultados com os recursos que você tem disponíveis. ">
+	<meta name="author" content="Resultados Digitais">
+	<meta name="keywords" content="">
+	<title>Analise agora!</title>
+	<!-- CSS -->
+	<link href="/css/bootstrap.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">	
+</head>
+<body class="home">
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="http://resultadosdigitais.com.br" target="_blank">Resultados Digitais</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+                <div class="container">
+    
+    <%# erb :highlight, 
+    layout: false, 
+    locals: {
+    title: "In house (redator)",
+    explain: "O planejamento e a produção de conteúdo feita pelos próprios colaboradores da empresa é conhecido como In house ou produção interna. Nesse caso, o redator é responsável por elaborar e externalizar o conhecimento da empresa através de conteúdo.",
+    advantages: "Trabalhar dessa forma te permite dar vazão a um volume maior de conteúdos, mantendo o nível de qualidade e permitindo o controle em relação ao alinhamento com a comunicação e estratégia da empresa.",
+    disadvantages: "Dificilmente com apenas um redator produzindo conteúdo você conseguirá atender a um grande espectro de conhecimento técnicos, o que pode tornar os seus conteúdos demasiadamente superficiais. Além disso, centralizar a demanda em uma pessoa expõe a empresa ao risco de depender unicamente deste funcionário.",
+    contents: ["http://resultadosdigitais.com.br/blog/webwriting/"]  } %>
+
+    <% erb :highlight, 
+    layout: false, 
+    locals: {
+    title: "In house (editor) Distribuição Simples",
+    explain: "Toda a estratégia, planejamento e fluxo de conteúdos é feita pelo editor, que delega para executivos e especialistas da empresa temas para a externalização dos aprendizados do seu dia-a-dia.",
+    advantages: "Vários especialistas produzindo conteúdos sobre assuntos da sua área de conhecimento permite à empresa ter conteúdos muito mais aprofundados e aplicáveis do que ter um redator discorrendo sobre estes assuntos. ",
+    disadvantages: "O editor ter de contar com pessoas cuja a ocupação principal não é produzir conteúdo é um risco para o seu negócio, pois pode tanto gerar conflitos de prioridade quanto atrasos nas entregas. Além disso, a curadoria de conteúdo demanda por parte do editor muito trabalho de releitura e edição.",
+    contents: ["http://resultadosdigitais.com.br/blog/por-que-o-blog-da-sua-empresa-deve-ter-um-editor/","http://resultadosdigitais.com.br/blog/como-engajar-empresa-producao-conteudo/","http://resultadosdigitais.com.br/blog/dicas-de-marketing-digital-2016-por-especialistas/"] } %>
+
+    <%# erb :highlight, 
+    layout: false, 
+    locals: {
+    title: "In house (editor) Distribuição Pesada",
+    explain: "Toda a estratégia, planejamento e fluxo de conteúdos é feita pelo editor, que delega para executivos e especialistas da empresa temas para a externalização dos aprendizados do seu dia-a-dia. A diferença é que na distribuição forçada, para garantir o cumprimento de prazos, o editor firma com o redator do conteúdo um compromisso público de apresentar um webinar ao vivo. A partir do momento em que este compromisso público é gerado, a chance de esta pessoa cancelar e não apresentar o conteúdo é muito pequena.",
+    advantages: "Muito conteúdo com alto nível de densidade, profundidade e qualidade, além de pontos de vista diversificados. Trabalhando com esse modelo de distribuição, temos também os benefícios de descentralizar a entrega (vários redatores) e um aumento na proporção de entregas dentro do prazo.",
+    disadvantages: "Grande necessidade de comunicação e controle com os redatores (executivos e especialistas) e prazos de entrega (webinars). Além disso, esse formato de distribuição demanda por parte do editor um trabalho de transcrição do conteúdo, além da releitura e edição.",
+    contents: "http://resultadosdigitais.com.br/blog/por-que-o-blog-da-sua-empresa-deve-ter-um-editor/ e http://resultadosdigitais.com.br/blog/como-engajar-empresa-producao-conteudo/".split(" e ") } %>
+
+    Output: <%= @output.inspect %>
+  </div>
+    </main>
+  </body>
+  </html>

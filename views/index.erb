@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-	<!-- Webfonts -->
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<!-- Meta tags -->
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<meta name="description" content="Receba um diagnóstico personalizado de como potencializar os resultados com os recursos que você tem disponíveis. ">
-	<meta name="author" content="Resultados Digitais">
-	<meta name="keywords" content="">
-	<title>Quem deve produzir o conteúdo na minha empresa?</title>
-	<!-- CSS -->
-	<link href="/css/bootstrap.css" rel="stylesheet">
-	<link href="/css/style.css" rel="stylesheet">	
+    <!-- Webfonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Meta tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Receba um diagnóstico personalizado de como potencializar os resultados com os recursos que você tem disponíveis. ">
+    <meta name="author" content="Resultados Digitais">
+    <meta name="keywords" content="">
+    <title>Quem deve produzir o conteúdo na minha empresa?</title>
+    <!-- CSS -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+           $('#main-cta').click(function(){
+              $('body').addClass("perfil"); 
+           });
+           $('#form-cta').click(function(){
+              $('body').removeClass("perfil"); 
+              $('body').addClass("diagnostico"); 
+           });
+        });
+    </script>
 </head>
-<body class="home">
+<body class="">
     <header>
         <nav class="navbar navbar-default">
             <div class="container">
@@ -28,57 +41,190 @@
         </nav>
     </header>
     <main>
-        <h1>Responda as perguntas e descubra quem deve produzir o conteúdo da sua empresa</h1>
-        <form action="/ver_resultado" method="POST">
-            <div class="answer" id="budget">
-                <h2 class="title">Budget</h2>
-                <p class="description">Quanto você investe ou pretende investir em conteúdo?</p>
-                <input type="radio" name="budget" value="very_limited">Até R$1.000,00<br>
-                <input type="radio" name="budget" value="limited">Entre R$1.000,00 e R$5.000,00<br>
-                <input type="radio" name="budget" value="unlimited"> Mais de R$5.000,00
+        <section id="intro">
+            <article id="head">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="img/icone.svg" alt="">
+                        </div>
+                        <div class="col-md-7">
+                            <h1>Quem deve produzir o conteúdo na minha empresa?</h1>
+                            <p>Receba um diagnóstico personalizado de como potencializar os resultados com os recursos que você tem disponíveis.</p>
+                        </div>
+                        <div class="col-md-12 cta">
+                            <a id="main-cta" href="#">Iniciar</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article id="what">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <p>A produção de conteúdo é uma das principais formas de alavancar os resultados do seu negócio, mas muitas empresas que já têm consciência disso se deparam com dificuldades para encontrar o melhor caminho para o seu contexto. Terceirizar, fazer in house, misturar? Este diagnóstico vai te indicar a melhor opção para seus objetivos e recursos! </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section id="pre-form">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="input-nome" placeholder="Nome">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="input-email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="input-empresa" placeholder="Empresa">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="input-site-empresa" placeholder="Site da Empresa">
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control">
+                                    <option value="">Selecione</option>
+                                    <option value="Software e Cloud">Software e Cloud</option>
+                                    <option value="Hardware">Hardware</option>
+                                    <option value="Telecomunicações">Telecomunicações</option>
+                                    <option value="Educação">Educação</option>
+                                    <option value="Agência">Agência</option>
+                                    <option value="Veículo de comunicação">Veículo de comunicação</option>
+                                    <option value="Consultoria">Consultoria</option>
+                                    <option value="Serviços corporativos">Serviços corporativos</option>
+                                    <option value="Ecommerce">Ecommerce</option>
+                                    <option value="Serviços para o consumidor">Serviços para o consumidor</option>
+                                    <option value="Turismo e Lazer">Turismo e Lazer</option>
+                                    <option value="Saúde">Saúde</option>
+                                    <option value="Industria de manufatura">Industria de manufatura</option>
+                                    <option value="RH e Recrutamento">RH e Recrutamento</option>
+                                    <option value="Serviços financeiros">Serviços financeiros</option>
+                                    <option value="Jurídico">Jurídico</option>
+                                    <option value="Imóveis">Imóveis</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control">
+                                    <option value="">Selecione</option>
+                                    <option value="Analista de marketing">Analista de marketing</option>
+                                    <option value="Gerente/Coordenador de Marketing">Gerente/Coordenador de Marketing</option>
+                                    <option value="Gerente/Coordenador de Vendas">Gerente/Coordenador de Vendas</option>
+                                    <option value="Diretor">Diretor</option>
+                                    <option value="Sócio / CEO">Sócio / CEO</option>
+                                    <option value="Outros Cargos">Outros Cargos</option>
+                                    <option value="Estudante">Estudante</option>
+                                </select>
+                            </div>
+                            <input type="submit" value="continuar" id="form-cta" >
+                        </form>                        
+                    </div>
+                </div>
             </div>
-            <div class="answer" id="complexity">
-                <h2 class="title">Complexidade</h2>
-                <p class="description">Quão técnico e complexo é o tema do seu conteúdo?</p>
-                <input type="radio" name="complexity" value="high">Alta complexidade (Ex.: Tecnologia Medicinal) <br>
-                <input type="radio" name="complexity" value="medium"> Média complexidade (Ex.: Automação de Marketing) <br>
-                <input type="radio" name="complexity" value="low"> Baixa complexidade (Ex.: Cervejas Artesanais)
-            </div>
-            <div class="answer" id="competition">
-                <h2 class="title">Competição</h2>
-                <p class="description">Na sua percepção, quão explorado é esse tema na internet?</p>
-                <input type="radio" name="competition" value="high">Muito explorado <br>
-                <input type="radio" name="competition" value="medium"> Parcialmente explorado <br>
-                <input type="radio" name="competition" value="low"> Pouco explorado
-            </div>
-            <div class="answer" id="team">
-                <h2 class="title">Equipe</h2>
-                <p class='description'>Qual a disponibilidade da sua equipe interna para produção de conteúdo?</p>
-                <input type="checkbox" name="team[]" value="editor" />Tenho um editor (mesmo que part time) <br>
-                <input type="checkbox" name="team[]" value="redator" />Tenho um redator full time<br>
-                <input type="checkbox" name="team[]" value="high_availability" />Os executivos e especialistas tem alta disponibilidade para produzir conteúdo <br>
-                <input type="checkbox" name="team[]" value="low_availability" />Os executivos e especialistas tem baixa disponibilidade para produzir conteúdo"<br>
-                <input type="checkbox" name="team[]" value="none">Não tenho disponibilidade de equipe <br>
-            </div>
-            <div class="answer" id="strategy">
-                <h2 class="title">Estratégia</h2>
-                <p class="description">Quanto a sua estratégia de aquisição depende do inbound marketing? </p>
-                <input type="radio" name="strategy" value="total_inbound_dependent">Minha estratégia de aquisição é muito dependente do inbound marketing. <br>
-                <input type="radio" name="strategy" value="partially_inbound_dependent"> Minha estratégia de aquisição é parcialmente dependente do inbound marketing. <br>
-                <input type="radio" name="strategy" value="no_inbound_dependent">Minha estratégia de aquisição não depende do inbound marketing.
-                <br>
-                <br>
-                <input type="submit" value="Avaliar">
-            </div>
-        </form>
+        </section>
+        <section id="form">
+            <div class="container">
+            <!--<div class="row">
+                   <div class="col-md-7">
+                       <h2>Responda as perguntas e descubra quem deve produzir o conteúdo da sua empresa</h2>
+                   </div>
+                </div>-->
+                <form action="/ver_resultado" method="POST">
+                    <div class="answer" id="strategy">
+                        <h5 class="title">Estratégia</h5>
+                        <h3>Quanto a sua estratégia de aquisição depende do inbound marketing? </h3>
+                        <label class="radio">
+                            <input type="radio" name="strategy" value="total_inbound_dependent">
+                            Minha estratégia de aquisição é muito dependente do inbound marketing.
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="strategy" value="partially_inbound_dependent"> 
+                            Minha estratégia de aquisição é parcialmente dependente do inbound marketing.
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="strategy" value="no_inbound_dependent">
+                            Minha estratégia de aquisição não depende do inbound marketing.
+                        </label>
+                    </div>
+                    <div class="answer" id="complexity">
+                        <h5 class="title">Complexidade</h5>
+                        <h3>Quão técnico e complexo é o tema do seu conteúdo?</h3>
+                        <label class="radio">
+                            <input type="radio" name="complexity" value="high">Alta complexidade (Ex.: Tecnologia Medicinal)
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="complexity" value="medium"> Média complexidade (Ex.: Automação de Marketing)
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="complexity" value="low"> Baixa complexidade (Ex.: Cervejas Artesanais)
+                        </label>
+                    </div>
+                    <div class="answer" id="competition">
+                        <h5 class="title">Competição</h5>
+                        <h3>Na sua percepção, quão explorado é esse tema na internet?</h3>
+                        <label class="radio">
+                            <input type="radio" name="competition" value="high">
+                            Muito explorado
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="competition" value="medium"> 
+                            Parcialmente explorado
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="competition" value="low"> 
+                            Pouco explorado
+                        </label>
+                    </div>
+                    <div class="answer" id="team">
+                        <h5 class="title">Equipe</h5>
+                        <h3>Qual a disponibilidade da sua equipe interna para produção de conteúdo?</h3>
+                        <label class="checkbox">
+                            <input type="checkbox" name="team[]" value="editor" />Tenho um editor* (mesmo que part time)
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="team[]" value="redator" />Tenho um redator** full time
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="team[]" value="high_availability" />
+                            Os executivos e especialistas tem alta disponibilidade para produzir conteúdo
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="team[]" value="low_availability" />
+                            Os executivos e especialistas tem baixa disponibilidade para produzir conteúdo"
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="team[]" value="none">
+                            Não tenho disponibilidade de equipe
+                        </label>
+                        <p>*Considere o possível editor como alguém do marketing com um maior nível de maturidade na organização e entendimento do posicionamento e estratégia.</p>
+                        <p>**Considere o possível redator como alguém com habilidades técnicas orientada para a redação. </p>
+                    </div>
+                    <div class="answer" id="budget">
+                        <h5 class="title">Budget</h5>
+                        <h3>Quanto você investe ou pretende investir em conteúdo mensalmente?</h3>
+                        <label class="radio">
+                            <input type="radio" name="budget" value="very_limited">Até R$1.000,00
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="budget" value="limited">Entre R$1.000,00 e R$5.000,00
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="budget" value="unlimited"> Mais de R$5.000,00
+                        </label>
+                        <input type="submit" value="Avaliar">
+                    </div>
+                </form>
+            </div>            
+        </section>
     </main>
     <footer>
         <div class="container">
             <p>Copyright © 2015 Resultados Digitais. <a href="http://resultadosdigitais.com.br/politica-de-privacidade/" target="_blank">Política de Privacidade</a>.</p>
         </div>
     </footer>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
   

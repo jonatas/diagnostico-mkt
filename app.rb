@@ -1,12 +1,13 @@
 require "sinatra"
 require "sinatra/reloader" if development?
+require "./analysis"
 
 get "/" do
   erb :index
 end
 
 post "/ver_resultado" do
-  @params = params
+  @output = Analysis.new(params).output
   erb :resultado
 end
 

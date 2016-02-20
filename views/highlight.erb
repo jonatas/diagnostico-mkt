@@ -1,0 +1,24 @@
+
+<div id="redator">
+  <h1 class="title"> <%= title %></h1>
+  <div class="explain">
+    <%= explain %>
+  </div>
+  <div class="advantages">
+    <h2 class="title">Vantagens</h2>
+    <p><%= advantages %></p>
+  </div>
+  <div class="disadvantages">
+    <h2 class="title">Desvantagens</h2>
+    <p><%= disadvantages %></p>
+  </div>
+</div>
+<div class="interesting">
+  <h2 class="title">Indicação de conteúdo</h2>
+  <ul>
+    <% contents.each do |content|%>
+    <li> <a href="<%= content %>" target="_blank"><%= content %></a></li>
+    <% end %>
+  </ul>
+</div>
+<hr />

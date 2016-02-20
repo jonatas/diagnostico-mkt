@@ -1,17 +1,229 @@
+/* Global styles */
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body{
+    /*background-color: #f0f0f5;*/
+    color: #333;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+h1{
+    font-size: 3.05em;
+    font-weight: 200;
+    line-height: 1.15;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h2{
+    font-size: 2em;
+    font-weight: 100;
+    line-height: 1.25;
+    margin: 0 0 24px 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
 .navbar {
-	background: #384654;
-	border: none;
-	border-radius: 0;
-	margin-bottom: 0;
+    background: #444;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
 }
 .navbar-header, .navbar-brand{
-	padding: 0;
-	margin-left: 0 !important;
+    padding: 0;
+    margin-left: 0 !important;
 }
 .navbar-brand{
-	background: url('../img/logo.svg') no-repeat center center;
-	display: inline-block;
-	height: 60px;
-	text-indent: -5000px;
-	width: 280px;
+    background: url('../img/logo.svg') no-repeat center center;
+    display: inline-block;
+    height: 60px;
+    text-indent: -5000px;
+    width: 280px;
+}
+
+/* ------------ INTRO -----------*/
+
+#intro #head {
+    padding: 40px 0px 0px;
+    background-color: #eee;
+}
+
+#intro #head h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #aaa;
+}
+
+#intro #head p {
+    color: #999;
+    font-size: 1.2em;
+}
+
+#intro .cta { 
+    margin-bottom: -23px;
+    text-align: center; 
+}
+
+#intro .cta #main-cta {
+    display: inline-block;
+    padding: 10px 160px;
+    color: #fff;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    background-color: #14ad97;
+    border-radius: 3px;
+    box-shadow: 0px 4px 6px 2px rgba(0,0,0,0.1);
+    transition-duration: 0.6s;
+}
+
+#intro .cta #main-cta:hover,
+#intro .cta #main-cta:focus {
+    text-decoration: none;
+    box-shadow: 0px 10px 20px 2px rgba(0,0,0,0.15);
+    transition-duration: 0.6s;
+    transform: scale(1.01);
+}
+
+
+#what {
+    padding: 100px 0px 150px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.perfil #intro #what,
+.perfil #intro p,
+.perfil #intro .cta,
+.perfil #form { display: none; }
+
+.diagnostico #intro #what,
+.diagnostico #intro p,
+.diagnostico #intro .cta,
+.diagnostico #pre-form { display: none; }
+
+.perfil #intro #head,
+.diagnostico #intro #head {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.perfil .col-md-3,
+.diagnostico .col-md-3 {
+    width: 80px;
+    padding: 0px;
+}
+
+.perfil .col-md-7,
+.diagnostico .col-md-7 { width: 70%; }
+
+.perfil #intro #head h1,
+.diagnostico #intro #head h1 {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    font-size: 1.8em;
+    font-weight: 300;
+    border-bottom: none;
+}
+
+
+/* ----------- PRE-FORM ------------ */
+
+#pre-form {
+    padding: 60px 0px;
+}
+
+#pre-form .form-control {
+    height: 45px;
+    font-size: 16px;
+    border: 1px solid #bbb;
+}
+
+
+/* ----------- FORM ------------ */
+
+#form {
+    padding-top: 60px;
+    padding-bottom: 120px;
+}
+
+#form h2 {
+    font-size: 1.9em;
+    font-weight: 400;
+}
+
+#form h5 {
+    display: inline-block;
+    padding: 6px 12px;
+    color: #fff;
+    font-weight: 100;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    background-color: #14ad97;
+}
+
+#form h3 {
+    width: 60%;
+    margin: 0px;
+    margin-bottom: 30px;
+    font-size: 2.3em;
+    font-weight: 100;
+    line-height: 1.2;
+}
+
+#form .answer { margin-bottom: 40px; }
+
+#form .radio,
+#form .checkbox {
+    margin: 0px;
+    padding: 10px 0px;
+    padding-left: 30px;
+    font-size: 1.1em;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+#form .radio input,
+#form .checkbox input {
+    margin-top: 6px;
+    cursor: pointer;
+}
+
+#form .radio:hover,
+#form .checkbox:hover { background-color: #f2f2f2;}
+
+#form .radio + .radio,
+#form .checkbox + .checkbox {
+    border-top: 1px dashed #ddd;
+}
+
+#form .answer p {
+    margin-top: 20px;
+    padding-left: 12px;
+    color: #888;
+    font-size: 0.9em;
+}
+
+#form .answer p + p { margin-top: 0px; }
+
+/* ----------- FOOTER ------------ */
+
+footer { 
+    padding-top: 16px;
+    font-size: 0.8em; 
+    text-align: center;
+    border-top: 1px solid #ddd;
 }

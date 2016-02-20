@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 750 750" style="enable-background:new 0 0 750 750;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#14AD97;}
+	.st1{opacity:0.1;}
+	.st2{fill:#FFFFFF;}
+</style>
+<circle class="st0" cx="377" cy="363.5" r="275"/>
+<g class="st1">
+	<polygon points="382.7,286.6 365.7,294.9 249.1,238.1 249.1,351.8 234.2,359 234.2,222.6 251.2,222.6 281.6,237.4 	"/>
+	<path d="M251.2,222.6l30.5,14.8h202l-101,49.2l-17,8.3l-116.6,56.9l-14.8,7.2v8.3h296.9V222.6H251.2z M281.6,352.4l101-49.2
+		l101,49.2H281.6z M516.2,351.8l-116.6-56.9l116.6-56.9V351.8z"/>
+	<rect x="293.6" y="382.1" width="237.5" height="14.8"/>
+	<rect x="293.6" y="411.8" width="237.5" height="14.8"/>
+	<rect x="293.6" y="441.5" width="237.5" height="14.8"/>
+	<rect x="234.2" y="471.2" width="296.9" height="14.8"/>
+	<rect x="234.2" y="500.9" width="296.9" height="14.8"/>
+	<path d="M234.2,382.1v74.2h14.8v-11v-3.8v-14.8h14.8v14.8v3.8v11h14.8v-74.2H234.2z M249.1,411.8V397h14.8v14.8H249.1z"/>
+</g>
+<g>
+	<polygon class="st2" points="377,281 360,289.3 243.4,232.4 243.4,346.1 228.5,353.3 228.5,216.9 245.5,216.9 276,231.7 	"/>
+	<path class="st2" d="M245.5,216.9l30.5,14.8h202L377,281l-17,8.3l-116.6,56.9l-14.8,7.2v8.3h296.9V216.9H245.5z M276,346.8
+		l101-49.2l101,49.2H276z M510.6,346.1l-116.6-56.9l116.6-56.9V346.1z"/>
+	<rect x="287.9" y="376.5" class="st2" width="237.5" height="14.8"/>
+	<rect x="287.9" y="406.1" class="st2" width="237.5" height="14.8"/>
+	<rect x="287.9" y="435.8" class="st2" width="237.5" height="14.8"/>
+	<rect x="228.5" y="465.5" class="st2" width="296.9" height="14.8"/>
+	<rect x="228.5" y="495.2" class="st2" width="296.9" height="14.8"/>
+	<path class="st2" d="M228.5,376.5v74.2h14.8v-11v-3.8V421h14.8v14.8v3.8v11h14.8v-74.2H228.5z M243.4,406.1v-14.8h14.8v14.8H243.4z
+		"/>
+</g>
+</svg>
