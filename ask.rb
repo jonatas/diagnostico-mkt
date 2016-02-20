@@ -1,25 +1,24 @@
 class Analysis
   def initialize answers
     @answer = answers
-    p @answer
   end
 
   def output
     answer_budget
       .merge answer_complexity
-      .merge answer_competition
-#    answer_team
+      .deeper_merge answer_competition
+#   answer_team
 #    answer_strategy
   end
 
   def answer_budget
     case @answer["budget"]
     when "no" then
-      {parties: false}
+      {outsourcing: false}
     when /^(very_)?limited$/
       {}
     when "unlimited" then
-      {parties: true}
+      {outsourcing: true}
     else
       {not_answer_budget: true}
     end
@@ -28,11 +27,11 @@ class Analysis
   def answer_complexity
     case @answer["complexity"]
     when "high" then
-      {}
+      {outsourcing: {tofu: false, mofu: false, guest: false}, redator: 'internal'}
     when "medium" then
-      {}
+      {outsourcing: {tofu: true, mofu: false, guest: true}, redator: 'internal'}
     when "low" then
-      {}
+      {outsourcing: {tofu: true, mofu: true, guest: true}, redator: 'external'}
     else
       {not_answer_complexity: true}
     end
@@ -41,11 +40,11 @@ class Analysis
   def answer_competition
     case @answer["competition"]
     when "high" then
-      {}
+      {outsourcing: {tofu: false, mofu: false, guest: false}}
     when "medium" then
-      {}
+      {outsourcing: {tofu: true, mofu: false, guest: true}}
     when "low" then
-      {}
+      {outsourcing: {tofu: true, mofu: true, guest: true}}
     else
       {not_answer_competition: true}
     end
@@ -68,13 +67,13 @@ describe Analysis do
 
   subject { Analysis.new(complete_answer).answer_budget }
 
-  context "no money no parties" do
+  context "no money no outsourcing" do
     let(:budget) {"no"}
-    it { is_expected.to eq(parties: false) }
+    it { is_expected.to eq(outsourcing: false) }
   end
 
   context "with money hire someone!" do
     let(:budget) {"unlimited"}
-    it { is_expected.to eq(parties: true) }
+    it { is_expected.to eq(outsourcing: true) }
   end
 end
