@@ -1,0 +1,17 @@
+.navbar {
+	background: #384654;
+	border: none;
+	border-radius: 0;
+	margin-bottom: 0;
+}
+.navbar-header, .navbar-brand{
+	padding: 0;
+	margin-left: 0 !important;
+}
+.navbar-brand{
+	background: url('../img/logo.svg') no-repeat center center;
+	display: inline-block;
+	height: 60px;
+	text-indent: -5000px;
+	width: 280px;
+}
