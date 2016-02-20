@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<!-- Webfonts -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<!-- Meta tags -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="description" content="Receba um diagnóstico personalizado de como potencializar os resultados com os recursos que você tem disponíveis. ">
+	<meta name="author" content="Resultados Digitais">
+	<meta name="keywords" content="">
+	<title>Quem deve produzir o conteúdo na minha empresa?</title>
+	<!-- CSS -->
+	<link href="/css/bootstrap.css" rel="stylesheet">
+	<link href="/css/styles.css" rel="stylesheet">	
+</head>
+<body class="home">
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="http://resultadosdigitais.com.br" target="_blank">Resultados Digitais</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>Responda as perguntas e descubra quem deve produzir o conteúdo da sua empresa</h1>
+        <form action="/ver_resultado" method="POST">
+            <div class="answer" id="budget">
+                <h2 class="title">Budget</h2>
+                <p class="description">Quanto você investe ou pretende investir em conteúdo?</p>
+                <input type="radio" name="budget" value="very_limited">Até R$1.000,00<br>
+                <input type="radio" name="budget" value="limited">Entre R$1.000,00 e R$5.000,00<br>
+                <input type="radio" name="budget" value="unlimited"> Mais de R$5.000,00
+            </div>
+            <div class="answer" id="complexity">
+                <h2 class="title">Complexidade</h2>
+                <p class="description">Quão técnico e complexo é o tema do seu conteúdo?</p>
+                <input type="radio" name="complexity" value="high">Alta complexidade (Ex.: Tecnologia Medicinal) <br>
+                <input type="radio" name="complexity" value="medium"> Média complexidade (Ex.: Automação de Marketing) <br>
+                <input type="radio" name="complexity" value="low"> Baixa complexidade (Ex.: Cervejas Artesanais)
+            </div>
+            <div class="answer" id="competition">
+                <h2 class="title">Competição</h2>
+                <p class="description">Na sua percepção, quão explorado é esse tema na internet?</p>
+                <input type="radio" name="competition" value="high">Muito explorado <br>
+                <input type="radio" name="competition" value="medium"> Parcialmente explorado <br>
+                <input type="radio" name="competition" value="low"> Pouco explorado
+            </div>
+            <div class="answer" id="team">
+                <h2 class="title">Equipe</h2>
+                <p class='description'>Qual a disponibilidade da sua equipe interna para produção de conteúdo?</p>
+                <input type="checkbox" name="team[]" value="editor" />Tenho um editor (mesmo que part time) <br>
+                <input type="checkbox" name="team[]" value="redator" />Tenho um redator full time<br>
+                <input type="checkbox" name="team[]" value="high_availability" />Os executivos e especialistas tem alta disponibilidade para produzir conteúdo <br>
+                <input type="checkbox" name="team[]" value="low_availability" />Os executivos e especialistas tem baixa disponibilidade para produzir conteúdo"<br>
+                <input type="checkbox" name="team[]" value="none">Não tenho disponibilidade de equipe <br>
+            </div>
+            <div class="answer" id="strategy">
+                <h2 class="title">Estratégia</h2>
+                <p class="description">Quanto a sua estratégia de aquisição depende do inbound marketing? </p>
+                <input type="radio" name="strategy" value="total_inbound_dependent">Minha estratégia de aquisição é muito dependente do inbound marketing. <br>
+                <input type="radio" name="strategy" value="partially_inbound_dependent"> Minha estratégia de aquisição é parcialmente dependente do inbound marketing. <br>
+                <input type="radio" name="strategy" value="no_inbound_dependent">Minha estratégia de aquisição não depende do inbound marketing.
+                <br>
+                <br>
+                <input type="submit" value="Avaliar">
+            </div>
+        </form>
+    </main>
+    <footer>
+        <div class="container">
+            <p>Copyright © 2015 Resultados Digitais. <a href="http://resultadosdigitais.com.br/politica-de-privacidade/" target="_blank">Política de Privacidade</a>.</p>
+        </div>
+    </footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+  
