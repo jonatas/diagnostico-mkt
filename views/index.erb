@@ -1,0 +1,36 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <title>Quem deve produzir o conteúdo de sua empresa?</title>
+  <script type="text/javascript" charset="utf-8" src="/app.js"></script>
+</head>
+<body>
+  <h1>Responda as perguntas e descubra quem deve produzir o conteúdo da sua empresa</h1>
+  <form action="/ver_resultado" method="POST">
+    <div class="answer" id="budget">
+      <h2 class="title">Budget</h2>
+      <p class="description">Quanto você investe ou pretende investir em conteúdo?</p>
+      <input type="radio" name="budget" value="very_limited">Até R$1.000,00<br>
+      <input type="radio" name="budget" value="limited">Entre R$1.000,00 e R$5.000,00<br>
+      <input type="radio" name="budget" value="unlimited"> Mais de R$5.000,00
+    </div>
+    <div class="answer" id="complexity">
+      <h2 class="title">Complexidade</h2>
+      <p class="description">Quão técnico e complexo é o tema do seu conteúdo?</p>
+      <input type="radio" name="complexity" value="high">Alta complexidade (Ex.: Tecnologia Medicinal) <br>
+      <input type="radio" name="complexity" value="medium"> Média complexidade (Ex.: Automação de Marketing) <br>
+      <input type="radio" name="complexity" value="low"> Baixa complexidade (Ex.: Cervejas Artesanais)
+    </div>
+    <div class="answer" id="competition">
+      <h2 class="title">Competição</h2>
+      <p class="description">Na sua percepção, quão explorado é esse tema na internet?</p>
+      <input type="radio" name="competition" value="high">Muito explorado <br>
+      <input type="radio" name="competition" value="medium"> Parcialmente explorado <br>
+      <input type="radio" name="competition" value="low"> Pouco explorado
+    </div>
+    <input type="submit" value="Avaliar">
+  </form>
+
+</body>
+</html>
