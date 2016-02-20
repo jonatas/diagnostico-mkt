@@ -13,9 +13,10 @@ class Analysis
     [answer_budget,
      answer_complexity,
      answer_competition].inject({}) do |h,output|
+       h[:outsourcing] ||= {}
        output[:outsourcing].each do |key, value|
-         if h[key].nil? || value == false
-           h[key] = value
+         if h[:outsourcing][key].nil? || value == false
+           h[:outsourcing][key] = value
          end
        end
        output.each do |key, value|
@@ -66,6 +67,38 @@ class Analysis
       {not_answer_competition: true}
     end
   end
+
+  def answer_team
+    h = {}
+    if !@answer["team"].empty?
+      if @answer["team"].include? "editor"
+        h[:editor_in_house] = !@answer["budget"].match?(/^(very_)?limited$/)
+      end
+      if @answer["team"].include? "high_availability"
+        h[:distribuition] = "fluid"
+      elsif @answer["team"].include? "low_availability"
+        h[:distribuition] = "forced"
+      elsif @answer["team"].include? "none"
+        if @answer_budget["budget"] =~ /^(un)?limited$/
+          h[:outsourcing] = {tofu: true, mofu: false, guest: true}
+        end
+      end
+    else
+      h[:not_answer_team] = true
+    end
+    h
+  end
+
+  def answer_strategy
+    case @answer["strategy"]
+    when "total_inbound_dependent" then
+      {outsourcing: {tofu: false, mofu: false, guest: false}}
+    when "partially_inbound_dependent" then
+      {outsourcing: {tofu: true, mofu: false, guest: false}}
+    when "no_inbound_dependent" then
+      {outsourcing: {tofu: true, mofu: true, guest: true}}
+    end
+  end
 end
 
 describe Analysis do
@@ -86,6 +119,7 @@ describe Analysis do
   let(:complexity) { "medium" }
   let(:budget) { "very_limited" }
   let(:analysis) { Analysis.new(complete_answer) }
+  let(:output) { Analysis.new(complete_answer) }
 
   context "no money no outsourcing" do
     subject { analysis.answer_budget[:outsourcing].values }
@@ -109,5 +143,9 @@ describe Analysis do
     subject { analysis.answer_competition}
     let(:competition) { "high" }
     it { is_expected.to eq(outsourcing: {tofu: true, mofu:false, guest:true}) }
+  end
+  context "see complete output" do
+    it { p output.output; expect(output.output).to be_a Hash}
+
   end
 end
