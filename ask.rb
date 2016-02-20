@@ -5,8 +5,8 @@ class Analysis
 
   def output
     answer_budget
-      .merge answer_complexity
-      .deeper_merge answer_competition
+    answer_complexity
+    answer_competition
 #   answer_team
 #    answer_strategy
   end
@@ -56,7 +56,7 @@ describe Analysis do
   let(:complete_answer) { 
     {
       "budget"=> budget,
-      "complexity"=>"medium",
+      "complexity"=> complexity,
       "competition"=>"medium",
       "team"=>["redator", "low_availability"],
       "strategy"=>"partially_inbound_dependent"
@@ -65,15 +65,32 @@ describe Analysis do
 
   #let(:analysis) { Analysis.new complete_answer}
 
-  subject { Analysis.new(complete_answer).answer_budget }
+
+  let(:complexity) { "medium" }
+  let(:budget) { "very_limited" }
+  let(:analysis) { Analysis.new(complete_answer) }
 
   context "no money no outsourcing" do
+    subject { analysis.answer_budget }
     let(:budget) {"no"}
     it { is_expected.to eq(outsourcing: false) }
   end
 
   context "with money hire someone!" do
+    subject { analysis.answer_budget }
     let(:budget) {"unlimited"}
     it { is_expected.to eq(outsourcing: true) }
+  end
+
+  context "complexity influences outsourcing" do
+    subject { analysis.answer_complexity}
+    let(:complexity) { "high" }
+    it { is_expected.to eq(outsourcing: {tofu: false, mofu:false, guest:false}, redator: "internal") }
+  end
+
+  context "influences outsourcing" do
+    subject { analysis.answer_competition}
+    let(:complexity) { "high" }
+    it { is_expected.to eq(outsourcing: {tofu: true, mofu:false, guest:true}) }
   end
 end
