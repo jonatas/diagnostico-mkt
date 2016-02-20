@@ -4,21 +4,38 @@ class Analysis
   end
 
   def output
-    answer_budget
-    answer_complexity
-    answer_competition
-#   answer_team
-#    answer_strategy
+    merge_outsourcing
+      .merge answer_team
+      .merge answer_strategy
+  end
+
+  def merge_outsourcing
+    [answer_budget,
+     answer_complexity,
+     answer_competition].inject({}) do |h,output|
+       output[:outsourcing].each do |key, value|
+         if h[key].nil? || value == false
+           h[key] = value
+         end
+       end
+       output.each do |key, value|
+         next if key == :outsourcing
+         h[key] = value
+       end
+       h
+     end
   end
 
   def answer_budget
     case @answer["budget"]
     when "no" then
-      {outsourcing: false}
-    when /^(very_)?limited$/
-      {}
+      {outsourcing: {tofu: false, mofu: false, guest: false}}
+    when "very_limited" then
+      {outsourcing: {tofu: true, mofu: false, guest: false}}
+    when "limited" then
+      {outsourcing: {tofu: true, mofu: true, guest: false}}
     when "unlimited" then
-      {outsourcing: true}
+      {outsourcing: {tofu: true, mofu: true, guest: true}}
     else
       {not_answer_budget: true}
     end
@@ -71,15 +88,15 @@ describe Analysis do
   let(:analysis) { Analysis.new(complete_answer) }
 
   context "no money no outsourcing" do
-    subject { analysis.answer_budget }
+    subject { analysis.answer_budget[:outsourcing].values }
     let(:budget) {"no"}
-    it { is_expected.to eq(outsourcing: false) }
+    it { is_expected.to eq([false,false,false]) }
   end
 
-  context "with money hire someone!" do
-    subject { analysis.answer_budget }
+  context "with money you can conquer the world!" do
+    subject { analysis.answer_budget[:outsourcing].values }
     let(:budget) {"unlimited"}
-    it { is_expected.to eq(outsourcing: true) }
+    it { is_expected.to eq([true,true,true]) }
   end
 
   context "complexity influences outsourcing" do
@@ -90,7 +107,7 @@ describe Analysis do
 
   context "influences outsourcing" do
     subject { analysis.answer_competition}
-    let(:complexity) { "high" }
+    let(:competition) { "high" }
     it { is_expected.to eq(outsourcing: {tofu: true, mofu:false, guest:true}) }
   end
 end
